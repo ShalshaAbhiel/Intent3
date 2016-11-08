@@ -1,10 +1,13 @@
 package id.sch.smktelkom_mlg.learn.intent3;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,30 +15,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.imageViewPhone )
-                .setOnClickListener(new View.OnClickListener()
-                {
+        findViewById(R.id.imageViewPhone)
+                .setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
+                    public void onClick(View v) {
                         dialPhoneNumber("082230273757");
                     }
                 });
         findViewById(R.id.imageViewSMS)
-                .setOnClickListener(new View.OnClickListener()
-                {
-                   @Override
-                    public void onClick(View v)
-                   {
-                       composeSmsMessage("Pesan dari SMK Telkom Malang");
-                   }
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        composeSmsMessage("Pesan dari SMK Telkom Malang");
+                    }
                 });
         findViewById(R.id.imageViewBrowser)
-                .setOnClickListener(new View.OnClickListener()
-                {
+                .setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
+                    public void onClick(View v) {
                         openWebPage("http://www.smktelkom-mlg.sch.id/");
                     }
                 });
@@ -64,4 +61,5 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null)
             startActivity(intent);
     }
+
 }
